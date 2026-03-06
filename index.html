@@ -1626,7 +1626,7 @@
         </div>
         <div class="purchase-btns" id="shopify-buy-wrap">
           <div id='product-component-1772754169596'></div>
-          <div id='product-component-1772767010485' style="display:none;"></div>
+          <div id='product-component-1772767010485'></div>
         </div>
         <div class="trust-icons">
           <div class="trust-icon">🔒 Secure checkout</div>
@@ -1959,6 +1959,9 @@
         node: document.getElementById('product-component-1772767010485'),
         moneyFormat: '%24%7B%7Bamount%7D%7D',
         options: buttonOptions
+      }).then(function() {
+        // Hide 2-pack AFTER it has fully rendered
+        document.getElementById('product-component-1772767010485').style.display = 'none';
       });
     });
   }

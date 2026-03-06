@@ -1626,7 +1626,7 @@
         </div>
         <div class="purchase-btns" id="shopify-buy-wrap">
           <div id='product-component-1772754169596'></div>
-          <div id='product-component-1772767010485' style="display:none;"></div>
+          <a id="btn-twopack" href="https://zgrhhx-uc.myshopify.com/cart/8957256302723:1" target="_blank" style="display:none; text-align:center; width:100%; padding:16px; background:#DEB8AD; color:#1E1C17; font-family:'Jost',sans-serif; font-size:0.72rem; letter-spacing:0.18em; text-transform:uppercase; text-decoration:none; transition:background 0.2s;" onmouseover="this.style.background='#C49088';this.style.color='#fff'" onmouseout="this.style.background='#DEB8AD';this.style.color='#1E1C17'">Buy Now — Secure Checkout</a>
         </div>
         <div class="trust-icons">
           <div class="trust-icon">🔒 Secure checkout</div>
@@ -1951,76 +1951,13 @@
           "productSet": { "styles": { "products": { "@media (min-width: 601px)": { "margin-left": "0px" } } } }
         }
       });
-      // Also initialize the 2-pack button using the same ui instance
-      if (window._initTwoPack) { window._initTwoPack(ui); }
+      // single kit button initialized above
     });
   }
 })();
 </script>
 
-<!-- SHOPIFY BUY BUTTON — 2 PACK (initialized after single kit SDK is ready) -->
-<script type="text/javascript">
-window._initTwoPack = function(ui) {
-  ui.createComponent('product', {
-    id: '8957256302723',
-    node: document.getElementById('product-component-1772767010485'),
-    moneyFormat: '%24%7B%7Bamount%7D%7D',
-    options: {
-      "product": {
-        "styles": {
-          "product": { "@media (min-width: 601px)": { "max-width": "100%", "margin-left": "0px", "margin-bottom": "0px" } },
-          "button": {
-            "font-family": "Jost, sans-serif",
-            "font-size": "0.72rem",
-            "letter-spacing": "0.18em",
-            "text-transform": "uppercase",
-            "padding-top": "16px",
-            "padding-bottom": "16px",
-            "width": "100%",
-            "background-color": "#DEB8AD",
-            "color": "#1E1C17",
-            "border-radius": "0px",
-            ":hover": { "background-color": "#C49088", "color": "#FFFFFF" },
-            ":focus": { "background-color": "#C49088" }
-          }
-        },
-        "contents": { "img": false, "title": false, "price": false },
-        "text": { "button": "Buy Now — Secure Checkout" }
-      },
-      "cart": {
-        "styles": {
-          "button": {
-            "font-family": "Jost, sans-serif",
-            "font-size": "0.72rem",
-            "letter-spacing": "0.18em",
-            "text-transform": "uppercase",
-            "background-color": "#C9A84C",
-            "color": "#1E1C17",
-            "border-radius": "0px",
-            ":hover": { "background-color": "#B8922C" }
-          }
-        },
-        "text": { "total": "Subtotal", "button": "Checkout" }
-      },
-      "toggle": {
-        "styles": {
-          "toggle": {
-            "background-color": "#DEB8AD",
-            ":hover": { "background-color": "#C49088" },
-            ":focus": { "background-color": "#C49088" }
-          }
-        }
-      },
-      "modalProduct": {
-        "contents": { "img": false, "imgWithCarousel": true, "button": false, "buttonWithQuantity": true },
-        "text": { "button": "Add to cart" }
-      },
-      "option": {},
-      "productSet": { "styles": { "products": { "@media (min-width: 601px)": { "margin-left": "0px" } } } }
-    }
-  });
-};
-</script>
+
 <div class="cart-bubble" onclick="scrollToKit()">
   <span class="cart-bubble-icon">🛍</span>
   <span class="cart-count" id="cartCount">0</span>
@@ -2056,7 +1993,7 @@ window._initTwoPack = function(ui) {
     document.getElementById('bundle-double').classList.toggle('active', type === 'double');
     document.getElementById('totalPrice').textContent = type === 'double' ? '$149' : '$89';
     document.getElementById('product-component-1772754169596').style.display = type === 'single' ? '' : 'none';
-    document.getElementById('product-component-1772767010485').style.display = type === 'double' ? '' : 'none';
+    document.getElementById('btn-twopack').style.display = type === 'double' ? 'block' : 'none';
   }
 
   function scrollToKit() {
